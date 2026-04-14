@@ -1,11 +1,281 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Portfolio | Desarrollador Web Full Stack">
+    <nav class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-sm z-50 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold text-blue-600 dark:text-blue-400">&lt;Nicolas Chiesa/&gt;</span>
+            <div class="flex items-center space-x-6">
+                <div class="hidden md:flex space-x-6">
+                    <a href="#proyectos" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Proyectos</a>
+                    <a href="#sobre-mi" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Sobre Mí</a>
+                    <a href="#habilidades" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Habilidades</a>
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
+                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
+                </button>
+                <a href="#contacto" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition hidden sm:inline-block">Contactar</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-20 px-6 max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+        <div class="flex-1 text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-gray-900 dark:text-white">
+                Hola, soy <span class="text-blue-600 dark:text-blue-400">Nicolas</span>
+            </h1>
+            <h2 class="text-2xl text-gray-600 dark:text-gray-300 mb-6">Desarrollador Web Full Stack</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl">
+                Me especializo en crear sistemas web eficientes y soluciones prácticas. Transformo ideas complejas en código limpio y funcional, enfocado siempre en la experiencia del usuario.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#proyectos" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition text-center">Ver mis proyectos</a>
+                <a href="/archivos/Nicolas_Chiesa_CV_Desarrollador_FullStack.pdf" download="Nicolas_Chiesa_CV.pdf" class="border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition text-center"><i class="fa-solid fa-download mr-2"></i>Descargar CV</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="proyectos" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-6">
+            <h3 class="text-3xl font-bold mb-12 text-center md:text-left text-gray-900 dark:text-white">Proyectos Destacados</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                    <div class="relative w-full h-56 group bg-gray-200 dark:bg-gray-700">
+                        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar h-full w-full">
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/maraton/1.jpg" alt="Pantalla principal Maratón" class="w-full h-full object-cover"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/maraton/2.jpg" alt="Motivo" class="w-full h-full object-cover"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/maraton/3.jpg" alt="Recorrido" class="w-full h-full object-cover"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/maraton/4.jpg" alt="Formularios" class="w-full h-full object-cover"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/maraton/5.jpg" alt="QR" class="w-full h-full object-cover"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/maraton/6.jpg" alt="footer" class="w-full h-full object-cover"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/maraton/7.jpg" alt="inscripcion" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            <i class="fa-solid fa-arrows-left-right mr-1"></i> Deslizar
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Sistema de Registro - Maratón</h4>
+                            <a href="https://github.com/Nicocc12/maraton-ituzaingo-web" target="_blank" class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 flex-1 text-sm">
+                            Desarrollo de una plataforma web para la gestión e inscripción de corredores. Implementé formularios, conexión a base de datos y un panel de administrador para gestionar participantes. Cuenta con generación automática de códigos QR para acreditación y envío de emails de confirmación.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full">PHP</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full">MySQL</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                    <div class="relative w-full h-56 group bg-gray-200 dark:bg-gray-700">
+                        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar h-full w-full">
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/fravega/2.jpeg" alt="Home de la App" class="w-full h-full object-contain"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/fravega/3.jpeg" alt="drawer" class="w-full h-full object-contain"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/fravega/1.jpeg" alt="Catálogo de productos" class="w-full h-full object-contain"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/fravega/4.jpeg" alt="historia" class="w-full h-full object-contain"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/fravega/5.jpeg" alt="perfil" class="w-full h-full object-contain"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/fravega/6.jpeg" alt="lista" class="w-full h-full object-contain"></div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            <i class="fa-solid fa-arrows-left-right mr-1"></i> Deslizar
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Clon E-commerce (React Native)</h4>
+                            <a href="https://github.com/Nicocc12/ecommerce-mobile-react-native" target="_blank" class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 flex-1 text-sm">
+                            Réplica funcional de una app comercial enfocada en interfaces móviles modernas y flujos complejos. Incluye recreación fiel de la UI, navegación lateral (Drawer), perfil de usuario y un catálogo dinámico con visualización de productos y precios.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full">React Native</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                    <div class="relative w-full h-56 group bg-gray-200 dark:bg-gray-700">
+                        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar h-full w-full">
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/biblioteca/1.png" alt="Material" class="w-full h-full object-contain"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/biblioteca/2.png" alt="socios" class="w-full h-full object-contain"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/biblioteca/3.png" alt="Gestión de préstamos" class="w-full h-full object-contain"></div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            <i class="fa-solid fa-arrows-left-right mr-1"></i> Deslizar
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Sistema Gestión Biblioteca</h4>
+                            <a href="https://github.com/Nicocc12/sistema-biblioteca-java" target="_blank" class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 flex-1 text-sm">
+                            Sistema de escritorio diseñado para la transición de planillas manuales a un entorno centralizado. Utilicé herencia en POO para diferenciar materiales, implementé lógica de préstamos validada por DNI y un sistema de migración de datos desde Excel.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full">Java</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full">POO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                    <div class="relative w-full h-56 group bg-gray-200 dark:bg-gray-700">
+                        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar h-full w-full">
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/snakegame/1.png" alt="Pantalla de juego" class="w-full h-full object-contain"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/snakegame/2.png" alt="Gameplay" class="w-full h-full object-contain"></div>
+                            <div class="snap-center shrink-0 w-full h-full"><img src="/snakegame/3.png" alt="Pantalla de Game Over" class="w-full h-full object-contain"></div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            <i class="fa-solid fa-arrows-left-right mr-1"></i> Deslizar
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Arcade: Snake Game</h4>
+                            <a href="https://github.com/Nicocc12" target="_blank" class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 flex-1 text-sm">
+                            Desarrollo del clásico juego Arcade aplicando conceptos de Game Loop, manejo de colisiones y eventos de teclado en tiempo real. Un proyecto enfocado en fortalecer la lógica algorítmica pura.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full">Lógica</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-20 bg-gray-50 dark:bg-gray-800/50 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row gap-12 items-center">
+            <div class="flex-1">
+                <h3 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Sobre Mí</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                    Soy un apasionado por la tecnología cursando el último año de la Tecnicatura en Programación. Me gusta involucrarme en todo el ciclo de desarrollo, desde la maquetación del front-end hasta la lógica dura de las bases de datos.
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Además de mi formación técnica, mi experiencia trabajando día a día como Vendedor y Asistente Administrativo me forjó habilidades fundamentales que el código no te enseña: comunicación clara con clientes, gestión de stock, resolución rápida de problemas y un fuerte enfoque en brindar soluciones reales.
+                </p>
+            </div>
+            <img src="/yo.jpg" alt="Foto de perfil de Nicolas" class="w-64 h-64 object-cover rounded-2xl shadow-lg border-4 border-white dark:border-gray-800">
+        </div>
+    </section>
+
+    <section id="habilidades" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-6">
+            <h3 class="text-3xl font-bold mb-12 text-center text-gray-900 dark:text-white">Tecnologías y Herramientas</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 border border-gray-100 dark:border-gray-800 dark:bg-gray-800 rounded-xl hover:shadow-md transition">
+                    <i class="fa-brands fa-js text-4xl text-yellow-400 mb-3"></i>
+                    <h5 class="font-medium dark:text-white">JavaScript</h5>
+                    <p class="text-xs text-gray-500 mt-1">Web & Logic</p>
+                </div>
+                <div class="p-6 border border-gray-100 dark:border-gray-800 dark:bg-gray-800 rounded-xl hover:shadow-md transition">
+                    <i class="fa-brands fa-react text-4xl text-blue-400 mb-3"></i>
+                    <h5 class="font-medium dark:text-white">React Native</h5>
+                    <p class="text-xs text-gray-500 mt-1">Mobile Apps</p>
+                </div>
+                <div class="p-6 border border-gray-100 dark:border-gray-800 dark:bg-gray-800 rounded-xl hover:shadow-md transition">
+                    <i class="fa-brands fa-java text-4xl text-red-600 mb-3"></i>
+                    <h5 class="font-medium dark:text-white">Java</h5>
+                    <p class="text-xs text-gray-500 mt-1">Desktop & POO</p>
+                </div>
+                <div class="p-6 border border-gray-100 dark:border-gray-800 dark:bg-gray-800 rounded-xl hover:shadow-md transition">
+                    <i class="fa-brands fa-python text-4xl text-blue-500 mb-3"></i>
+                    <h5 class="font-medium dark:text-white">Python</h5>
+                    <p class="text-xs text-gray-500 mt-1">Logic & Scripts</p>
+                </div>
+                <div class="p-6 border border-gray-100 dark:border-gray-800 dark:bg-gray-800 rounded-xl hover:shadow-md transition">
+                    <i class="fa-brands fa-php text-4xl text-indigo-500 mb-3"></i>
+                    <h5 class="font-medium dark:text-white">PHP</h5>
+                    <p class="text-xs text-gray-500 mt-1">Server Side</p>
+                </div>
+                <div class="p-6 border border-gray-100 dark:border-gray-800 dark:bg-gray-800 rounded-xl hover:shadow-md transition">
+                    <i class="fa-solid fa-database text-4xl text-blue-400 mb-3"></i>
+                    <h5 class="font-medium dark:text-white">MySQL</h5>
+                    <p class="text-xs text-gray-500 mt-1">Database</p>
+                </div>
+                <div class="p-6 border border-gray-100 dark:border-gray-800 dark:bg-gray-800 rounded-xl hover:shadow-md transition">
+                    <i class="fa-brands fa-html5 text-4xl text-orange-500 mb-3"></i>
+                    <h5 class="font-medium dark:text-white">HTML & CSS</h5>
+                    <p class="text-xs text-gray-500 mt-1">Structure & UI</p>
+                </div>
+                <div class="p-6 border border-gray-100 dark:border-gray-800 dark:bg-gray-800 rounded-xl hover:shadow-md transition">
+                    <i class="fa-brands fa-github text-4xl text-gray-700 dark:text-gray-300 mb-3"></i>
+                    <h5 class="font-medium dark:text-white">Git & GitHub</h5>
+                    <p class="text-xs text-gray-500 mt-1">Version Control</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-blue-600 dark:bg-blue-800 text-white transition-colors duration-300">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold mb-6">¿Trabajamos juntos?</h3>
+            <p class="text-blue-100 mb-8 text-lg">Si tenés un proyecto en mente o querés sumar un perfil proactivo a tu equipo, completá el formulario o contactame por LinkedIn.</p>
+            
+            <form action="https://formspree.io/f/meevonrw" method="POST" class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl text-left mb-10">
+                <div class="grid grid-cols-1 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nombre</label>
+                        <input type="text" name="name" required class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                        <input type="email" name="email" required class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Mensaje</label>
+                        <textarea name="message" rows="4" required class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition shadow-lg">Enviar mensaje</button>
+                </div>
+            </form>
+
+            <div class="flex justify-center gap-6">
+                <a href="https://www.linkedin.com/in/nicolas-chiesa-dev" target="_blank" class="flex items-center gap-2 border-2 border-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 dark:hover:bg-blue-900 transition">
+                    <i class="fa-brands fa-linkedin text-xl"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm transition-colors duration-300">
+        <p>&copy; 2026 Nicolas Chiesa. Desarrollado con Astro y Tailwind CSS.</p>
+    </footer>
+
+    <script is:inline>
+        window.onload = function() {
+            const btn = document.getElementById('theme-toggle');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+            if (document.documentElement.classList.contains('dark')) {
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+            } else {
+                lightIcon.classList.add('hidden');
+                darkIcon.classList.remove('hidden');
+            }
+
+            btn.onclick = function() {
+                document.documentElement.classList.toggle('dark');
+                
+                darkIcon.classList.toggle('hidden');
+                lightIcon.classList.toggle('hidden');
+            };
+        };
+    </script>
 </Layout>
